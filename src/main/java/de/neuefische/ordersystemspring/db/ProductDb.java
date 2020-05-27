@@ -19,9 +19,9 @@ public class ProductDb {
 
 
     private final ArrayList<Product> products = new ArrayList<>(List.of(
-            new Product("123", "Gurke"),
-            new Product("234", "Tomate"),
-            new Product("345", "Wurst")
+            new Product("1", "Gurke"),
+            new Product("2", "Tomate"),
+            new Product("3", "Wurst")
     ));
 
     public List<Product> listProducts() {

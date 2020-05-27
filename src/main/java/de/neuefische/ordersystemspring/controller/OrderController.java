@@ -13,7 +13,7 @@ import java.util.List;
 
 public class OrderController {
 
-    private final OrderService service;
+    private OrderService service;
 
 
     @Autowired
@@ -22,14 +22,21 @@ public class OrderController {
     }
 
     @GetMapping
-    public List<Order> getOrder() {
-        return service.getOrders();
+    public List<Order> listOrders() {
+        return service.listOrders();
     }
 
 
     @PutMapping
-    public Order addorder(@RequestBody Order order) {
-        service.addOrder((order));
-        return order;
+    public Order addOrder(@RequestBody List<String> productIds) {
+        return service.addOrder(productIds);
     }
+
+
+    @GetMapping("{orderId}")
+    public List<Order> getOrderById(@PathVariable String orderId){
+        System.out.println(orderId);
+        return service.findOrderById(orderId);
+    }
+
 }
