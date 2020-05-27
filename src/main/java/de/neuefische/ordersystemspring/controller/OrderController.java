@@ -35,7 +35,6 @@ public class OrderController {
 
     @GetMapping("{orderId}")
     public List<Order> getOrderById(@PathVariable String orderId){
-        System.out.println(orderId);
         return service.findOrderById(orderId);
     }
 
