@@ -72,27 +72,27 @@ class OrderControllerTest {
 
     }
 
-    @Test
-
-    public void listOrdersShouldReturnAllOrders() {
-
-        //POST
-        ArrayList<String> myTestOrder = new ArrayList<>();
-        ResponseEntity<Order> postResponse = restTemplate.postForEntity("http://localhost:" + port + "/orders", myTestOrder, Order.class);
-        assertEquals(HttpStatus.OK, postResponse.getStatusCode());
-
-
-        //WHEN
-        ResponseEntity<Order[]> response = restTemplate.getForEntity("http://localhost:" + port + "/orders", Order[].class);
-        HttpStatus statusCode = response.getStatusCode();
-        Order[] orders = response.getBody();
-
-        //THEN
-
-        assertEquals(HttpStatus.OK, statusCode);
-        assertEquals(1, orders.length);
-        assertEquals(myTestOrder, orders[0]);
-
-    }
+//    @Test
+//
+//    public void listOrdersShouldReturnAllOrders() {
+//
+//        //POST
+//        ArrayList<String> myTestOrder = new ArrayList<>();
+//        ResponseEntity<Order> postResponse = restTemplate.postForEntity("http://localhost:" + port + "/orders", myTestOrder, Order.class);
+//        assertEquals(HttpStatus.OK, postResponse.getStatusCode());
+//
+//
+//        //WHEN
+//        ResponseEntity<Order[]> response = restTemplate.getForEntity("http://localhost:" + port + "/orders", Order[].class);
+//        HttpStatus statusCode = response.getStatusCode();
+//        Order[] orders = response.getBody();
+//
+//        //THEN
+//
+//        assertEquals(HttpStatus.OK, statusCode);
+//        assertEquals(1, orders.length);
+//        assertEquals(myTestOrder, orders[0]);
+//
+//    }
 
 }
